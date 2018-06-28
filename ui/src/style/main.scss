@@ -1,0 +1,923 @@
+html{
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+}
+body{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  color: #eee;
+  font-size: 14px;
+  background: #000;
+}
+.outWapper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  // z-index:1000;
+}
+//公司首页的样式
+.dashboard{
+  position: absolute;
+  width: 100%;
+  border-radius: 3px;
+  background: #000;
+  margin-top: 40px;
+  .content{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 20px;
+  }
+}
+//header里的样式
+.top{
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background: #363636;
+  header{
+    padding: 0rem 1.6rem;
+    // height: 60px;
+    overflow: hidden;
+  }
+  .logo{
+    width: 5rem;
+    text-indent: -9999em;
+    background: url(../assets/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  //更改右侧菜单栏的高度
+  .el-menu--horizontal>.el-submenu .el-submenu__title{
+    height: 40px;
+    line-height: 40px;
+    border: none;
+  }
+}
+//去除菜单下的边框
+.el-menu--horizontal{
+  border: none;
+}
+
+//中心数据的样式
+.dataCenter{
+  // .v-modal{
+  //   background: #fff;
+  // }
+  >div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    // box-sizing: border-box;
+  }
+  .topTen,.schedule,.saleStatus,.storeStatus,.productTypeStatus,.income{
+    height: 380px;
+  }
+  //外部每一个组件的响应式布局
+  .commont{
+    flex: 0.3;
+    width: 353px;
+    flex-wrap: wrap;
+    margin-right: 18px;
+    margin-top: 20px;
+  }
+  //每一个组件内的每一个图表的公共样式，外部边框的样式
+  // .commontBoxL{
+  //   // clear: both;
+  //   border: 2px dotted #3aafd3;
+  //   border-radius: 3px;
+  //   box-shadow: 0px 0px 10px #3aafd3,0px 0px 10px #3aafd3 inset;
+  //   height:380px;
+  //   .textL{
+  //     padding: 0px 10px;
+  //     text-align: center;
+  //     color: #3aafd3;
+  //     text-shadow: #3db3dd 1px 0px 10px,#3db3dd 1px 0px 20px;
+  //     background: #000;
+  //   }
+  // }
+  .productTypeStatus, .income{
+    flex: 0.4;
+    width: 472px;
+    margin-right: 0px;
+  }
+  .schedule{
+    width: 353px;
+    display: flex;
+  }
+  .saleSchedule, .saleProgress{
+    width: 169px;
+    margin: 0;
+  }
+  .bottom{
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  //修改各个图表loading的背景色
+  .v-charts-component-loading{
+    background-color: rgba(0,0,0,.0);
+  }
+
+}
+.topTen,.schedule,.saleStatus,.storeStatus,.productTypeStatus,.income{
+  height: 600px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 7%;
+}
+  //每一个组件内的每一个图表的公共样式，外部边框的样式
+.commontBoxL{
+  height: 100%;
+  // height:380px;
+  // clear: both;
+  margin: 0 auto;
+  border: 2px dotted #3aafd3;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px #3aafd3,0px 0px 10px #3aafd3 inset;
+  .textL{
+    font-size: 1.28rem;
+    padding: 0px 10px;
+    text-align: center;
+    color: #3aafd3;
+    text-shadow: #3db3dd 1px 0px 10px,#3db3dd 1px 0px 20px;
+    background: #000;
+  }
+}
+
+.storeStatus{
+  //修改使用组件的一些样式
+  //门店动态的弹出表格的样式
+  .commontBoxL .el-table .warning-row {
+    background: oldlace;
+   }
+
+  .commontBoxL .el-table .success-row {
+    background: #f0f9eb;
+  }
+  .commontBoxL .el-table{
+    text-align: center;
+  }
+  .commontBoxL .el-table .has-gutter th>div.cell{
+    text-align: center;
+  }
+  .commontBoxL  .el-dialog__header{
+    text-align: center;
+  }
+  .commontBoxL .el-dialog__body{
+    height: 600px;
+  }
+}
+//修改收入成本与毛利的弹出层的背景色
+.income .incomeDia .el-dialog{
+   // background: #434343;
+}
+.el-dialog__wrapper{
+  // width: 99%;
+}
+
+//单个屏中 orderInfo 的样式
+.order-info{
+  padding-top: 120px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 20px;
+  align-items: center;
+  flex-grow: 0.3;
+  margin-right: 18px;
+  height: 600px;
+}
+.order-info>div{
+  width: 60%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
+}
+.order-info>div>div{
+  border: 2px solid #3aafd3;
+  box-shadow: 0px 0px 10px #3aafd3, 0px 0px 10px #3aafd3 inset;
+  border-radius: 25px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  position: relative;
+  padding: 5px 0px;
+}
+.order-info>div>div h5{
+  font-size: 24px;
+  line-height: 30px;
+  margin: 0px auto;
+  position: absolute;
+  top: -18px;
+  left: 15%;
+  background-color: #000;
+  padding: 0px 10px;
+  color: #3db3dd;
+  text-shadow: #3db3dd 1px 0px 10px, #3db3dd 1px 0px 20px;
+}
+// .order-info .num>h5, .order-info .rate>h5 {
+//   left: 32%;
+// }
+// .order-info .ave-price>h5{
+//   left: 36%;
+// }
+// .order-info .flow>h5{
+//   left: 30%;
+// }
+.order-info>div>div h4{
+  font-size: 24px;
+  color: #359AB5;
+  line-height: 30px;
+  margin: 10px auto 0px auto;
+  // margin: -15px auto 0px auto;
+}
+.order-info>div>div div{
+  line-height: 35px;
+  text-align: center;
+}
+
+//单个屏中 salesTrend 的样式
+.sales-trend{
+  padding-top: 120px;
+  position: relative;
+  margin-left: 10%;
+  width: 80%;
+  flex-grow: 0.4;
+}
+.sales-trend h5{
+  font-size: 20px;
+  line-height: 25px;
+  position: absolute;
+  top: 108px;
+  left: 40%;
+  background-color: #000;
+  padding: 0px 5px;
+  z-index: 100;
+  color: #3aafd3;
+  text-shadow: #3db3dd 1px 0px 10px, #3db3dd 1px 0px 20px;
+}
+.switch-store{
+  position: absolute;
+  top: 9.4rem;
+  right: 7rem;
+  border-radius: 25px;
+}
+.sales-trend-wrap{
+  border: 2px dotted #3aafd3;
+  box-shadow: 0px 0px 10px #3aafd3, 0px 0px 10px #3aafd3 inset;
+  box-sizing: border-box;
+  width: 100%;
+  height: 600px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sales-chart{
+  width: 98%;
+  height: 98%;
+  background-color: #000;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+//单屏中 densitymap 的样式
+.density-map{
+  position: relative;
+  .title{
+    position: absolute;
+    font-size: 2rem;
+    top: 4rem;
+    left: 43rem;
+    z-index: 100;
+    color: #3aafd3;
+    text-shadow: #3db3dd 1px 0px 10px, #3db3dd 1px 0px 20px;
+  }
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  #dailyOrdersMap{
+     height: 100%;
+  }
+  border-radius: 3px;
+}
+
+//单屏中 dis-map 的样式
+.dis-map{
+  width: 100%;
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#mapCharts{
+  width: 700px;
+  height: 700px;
+  background-color: #000;
+  flex: 1;
+}
+
+
+//全屏中 orderInfo 、salesTrend 、densitymap 的样式
+.dashboard{
+  .order-info{
+    padding-top: 0;
+    width: 353px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    align-items: center;
+    flex-grow: 0.3;
+    margin-right: 18px;
+    height: 400px;
+  }
+  .order-info>div{
+    // height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 1;
+  }
+  .order-info>div>div{
+    border: 2px solid #3aafd3;
+    box-shadow: 0px 0px 10px #3aafd3, 0px 0px 10px #3aafd3 inset;
+    border-radius: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    position: relative;
+    padding: 5px 0px;
+  }
+  .order-info>div>div h5{
+    font-size: 14px;
+    line-height: 25px;
+    margin: 0px auto;
+    position: absolute;
+    top: -12px;
+    left: 20%;
+    background-color: #000;
+    padding: 0px 10px;
+    color: #3aafd3;
+    text-shadow: #3db3dd 1px 0px 10px, #3db3dd 1px 0px 20px;
+  }
+  .order-info .num>h5, .order-info .rate>h5 {
+    left: 30%;
+  }
+  .order-info .ave-price>h5{
+    left: 35%;
+  }
+  .order-info .flow>h5{
+    left: 25%;
+  }
+  .order-info>div>div h4{
+    font-size: 16px;
+    color: #359AB5;
+    line-height: 25px;
+    margin: -15px auto 0px auto;
+  }
+  .order-info>div>div div{
+    line-height: 20px;
+  }
+
+  //全屏中 salesTrend 的样式
+  .sales-trend{
+    padding-top: 0px;
+    position: relative;
+    width: 472px;
+    flex-grow: 0.4;
+    margin-left: 0px;
+  }
+  .sales-trend h5{
+    font-size: 1.28rem;
+    line-height: 25px;
+    position: absolute;
+    top: -12px;
+    left: 20%;
+    background-color: #000;
+    padding: 0px 5px;
+    z-index: 100;
+    color: #3aafd3;
+    text-shadow: #3db3dd 1px 0px 10px, #3db3dd 1px 0px 20px;
+  }
+  .switch-store{
+    position: absolute;
+    top: 0.75rem;
+    right: 84px;
+    border-radius: 25px;
+  }
+  .sales-trend-wrap{
+    border: 2px dotted #3aafd3;
+    box-shadow: 0px 0px 10px #3aafd3, 0px 0px 10px #3aafd3 inset;
+    box-sizing: border-box;
+    width: 100%;
+    height: 400px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #sales-chart{
+    width: 98%;
+    height: 98%;
+    background-color: #000;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+  }
+
+  //全屏中 density 样式
+  .density-map{
+    position: relative;
+    .title{
+      position: relative;
+      font-size: 1.28rem;
+      top: 0.5rem;
+      left: 0rem;
+      z-index: 100;
+      padding-bottom: 10px;
+    }
+    box-sizing: border-box;
+    width: 400px;
+    flex-grow: 0.2;
+    margin-left: -10px;
+    margin-right: 10px;
+    height: 400px;
+    overflow: hidden;
+    #dailyOrdersMap{
+       height: 100%;
+    }
+    border-radius: 3px;
+  }
+  //全屏中 disMap 样式
+  .dis-map{
+    padding-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 353px;
+    flex-grow: 0.3;
+    margin-right: 18px;
+  }
+  #mapCharts{
+    width: 100%;
+    height: 400px;
+    background-color: #000;
+  }
+}
+
+
+
+//大屏中的商品销售动态页面的样式
+.saleStatus{
+   fieldset legend{
+    // font-size: 1.28rem;
+  }
+  fieldset .topTab{
+    // margin-top: 10px;
+    text-align: right;
+    width: 326px;
+    text-align: right;
+    float: right;
+  }
+ fieldset .tab{
+
+    font-size: 1rem;
+    display: inline-block;
+    padding: 4px;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    background: #a3a3a3;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+ fieldset .tab.active{
+    background: #22baf1;
+  }
+ fieldset .title span{
+    width: 100%;
+    line-height: 35px;
+    float: left;
+    padding: 2px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+ fieldset ul.list{
+    width: 100%;
+    box-sizing:border-box;
+    // border-bottom: 1px solid #ddd;
+    border-bottom: 1px dotted #3aafd3;
+    // height: 260px;
+    overflow: hidden;
+  }
+ fieldset ul.list li{
+   display: flex;
+    height: 30px;
+    line-height: 30px;
+    min-height: 30px;
+    text-align: center;
+    border-left: 1px dotted #3aafd3;
+    border-right: 1px dotted #3aafd3;
+    border-bottom: 1px dotted #3aafd3;
+    box-sizing: border-box;
+    font-size: 13px;
+  }
+  fieldset ul.list li:first-child{
+    border-top: none;
+  }
+ fieldset ul.list li:last-child{
+   // border-bottom: 1px solid #ddd;
+    // border-bottom: none;
+  }
+  .el-carousel{
+    width: 100%;
+  }
+  .el-carousel__indicator{
+    display: none;
+  }
+   #scrollDivNew{
+    // overflow: hidden;
+  }
+ fieldset #scrollDivNew .scrollText{
+    height: 520px;
+    min-height: 520px;
+    // overflow: hidden;
+    // border-bottom: 1px solid #ddd;
+  }
+ fieldset ul.list.produce{
+    border: none;
+    margin-right: 2px;
+  }
+ fieldset ul.list.produce li{
+    height: 520px;
+    min-height: 520px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+ fieldset ul.list.produce li span{
+    padding: 4px;
+    float: left;
+  }
+ fieldset ul.list.produce li span.produceNm{
+    margin-top: 20px;
+    font-size: 20px;
+    float: left;
+    display: block;
+  }
+  fieldset ul.list.produce li span.produceTime{
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .bg{
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 10px;
+    background: url(../assets/phone.png) no-repeat;
+    background-size: 150px 150px;
+  }
+ fieldset ul.list.produce table{
+    padding: 10px;
+    width: 100%;
+    float: left;
+    margin-left: 20px;
+    text-align: left;
+  }
+ fieldset ul.list.produce table tr{
+    text-align: center;
+  }
+ fieldset ul.list.produce table tr th{
+      color: #3aafd3;
+  }
+ fieldset ul.list.produce table tr .set{
+      color: #3aafd3;
+      text-align: left;
+      font-size: 20px;
+  }
+ fieldset ul.list.produce table td,th{
+    font-size: 20px;
+    padding: 6px;
+  }
+ fieldset .el-carousel__container{
+    height: 520px;
+    overflow: hidden;
+  }
+ fieldset .scrollText{
+    height: 520px;
+    // border: 1px solid #ddd;
+    box-sizing: border-box;
+  }
+ .commontBoxL .el-table{
+    text-align: center;
+  }
+ .commontBoxL .el-table .has-gutter th>div.cell{
+    font-size: 16px;
+    text-align: center;
+  }
+ .commontBoxL  .el-dialog__header{
+    text-align: center;
+  }
+}
+//首页的商品销售动态的样式
+.dashboard{
+  .saleStatus fieldset #scrollDivNew .scrollText{
+    height: 281px;
+    min-height: 281px;
+    // border: 1px solid #ddd;
+  }
+  .saleStatus fieldset ul.list.produce{
+    border: none;
+    border-bottom: 1px dotted #3aafd3;
+  }
+  .saleStatus fieldset ul.list li{
+    padding: 0px;
+  }
+  .saleStatus fieldset ul.list.produce li{
+    height: 281px;
+    min-height: 281px;
+    font-size: 14px;
+    border: none;
+    // border-bottom: 1px solid #ddd;
+  }
+  .saleStatus fieldset ul.list.produce li span{
+    padding: 4px;
+  }
+  .saleStatus fieldset ul.list.produce li span.produceNm{
+    margin-top: 20px;
+    width: 60%;
+    text-align: left;
+    font-size: 14px;
+  }
+  .saleStatus fieldset ul.list.produce li span.produceTime{
+    margin-top: 0px;
+    font-size: 14px;
+  }
+  .saleStatus fieldset ul.list.produce li table{
+    margin-left: 20px;
+  }
+  .saleStatus fieldset ul.list.produce table tr .set{
+    font-size: 14px;
+  }
+  .saleStatus fieldset ul.list.produce li table .set{
+    text-align: left;
+  }
+  .saleStatus fieldset ul.list.produce table td,th{
+    font-size: 14px;
+  }
+  .saleStatus .bg{
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-top: 20px;
+    margin-left: 10px;
+    background: url(../assets/phone.png) no-repeat;
+    background-size: 80px 80px;
+  }
+  .saleStatus fieldset .el-carousel__container{
+    height: 281px;
+    overflow: hidden;
+    margin-right: 5px;
+    // border-bottom: 1px dotted #3aafd3;
+  }
+  .saleStatus fieldset .scrollText{
+    height: 281px;
+    box-sizing: border-box;
+  }
+  .saleStatus .commontBoxL .el-dialog__body{
+    // width: 100%;
+    height: 600px;
+    overflow: scroll;
+  }
+}
+
+//大屏上的品类销售动态的样式
+.productTypeStatus fieldset legend.textL{
+  width: 128px;
+  margin-left: 150px;
+  margin-right: 150px;
+  font-size: 1.28rem;
+}
+.productTypeStatus .commontBoxL .outBox{
+  display: flex;
+  justify-content: space-around;
+  margin: auto auto;
+}
+.productTypeStatus .commontBoxL .outBox  .ve-ring{
+  flex: 0.45;
+  margin: auto auto;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.productTypeStatus .commontBoxL .outBox .pieBox{
+  flex:0.45;
+  margin: auto auto;
+  justify-content: space-around;
+  margin-bottom: 60px;
+  margin-top: 40px;
+}
+.productTypeStatus .commontBoxL .outBox .pieBox .layoutPie{
+  float: left;
+  width: 50%;
+}
+//首页的品类销售动态的样式
+.dashboard{
+  .productTypeStatus fieldset legend.textL{
+    width: 128px;
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 1.28rem;
+  }
+  .productTypeStatus .commontBoxL .outBox{
+    display: flex;
+    justify-content: space-around;
+    margin: auto auto;
+  }
+  .productTypeStatus .commontBoxL .outBox  .ve-ring{
+    margin-left: 20px;
+    flex: 0.45;
+    margin: auto auto;
+    margin-top: 10px;
+  }
+  .productTypeStatus .commontBoxL .outBox .pieBox{
+    flex:0.45;
+    margin: auto auto;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .productTypeStatus .commontBoxL .outBox .pieBox .layoutPie{
+    float: left;
+    width: 50%;
+  }
+}
+
+//每日订单地图分布的样式
+.dailyOrders{
+  padding-top: 50px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  #dailyOrdersMap{
+     height: 100%;
+  }
+  //地图的搜索条的字体颜色
+  .el-vue-search-box-container .search-box-wrapper .search-btn{
+    // color: #606266;
+  }
+  .search-tips{
+    color: #606266;
+  }
+  .search{
+    padding: 10px;
+    margin-left: 40px;
+    // width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    >div{
+      vertical-align: middle;
+      flex: 1;
+      span{
+        margin-right: 10px;
+      }
+      span.store{
+        float: left;
+        line-height: 40px;
+        margin-right: 10px;
+        z-index: 9999;
+      }
+    }
+    .el-vue-search-box-container{
+      display: inline-block;
+      height: 40px;
+      border-radius: 3px;
+    }
+    .submit{
+      margin-right: 4%;
+      height: 40px;
+    }
+  }
+}
+
+//大屏上的销售进度的样式
+.saleProgress{
+  position: relative;
+  flex: 1;
+  margin-right: 10px;
+  :nth-child(2n){
+    margin-right: 0px;
+  }
+  .txt .textL{
+    text-shadow: none;
+    padding: 2px;
+    text-align: center;
+    text-align-last:center;
+    font-size: 0.857rem;
+    margin-bottom: 10px;
+    span{
+      text-align: left;
+      margin-right: 2px;
+    }
+  }
+  .radarStyle#main{
+    float: left;
+    margin: 0 auto;
+    margin-left: 10%;
+    width: 540px;
+    height: 90%;
+    box-sizing: border-box;
+  }
+  .ratio{
+    display: block;
+    margin: 0 auto;
+    margin-top: 150px;
+  }
+  .shopsToggle{
+    float: right;
+  }
+  //选择门店的选择框的样式
+  .el-select{
+    width:auto;
+  }
+  .el-input__inner{
+    text-align: center;
+  }
+  .el-select-dropdown__item {
+    width: 180px;
+  }
+  .ratio span{
+    display: block;
+    margin-bottom: 10px;
+    padding: 0px 10px;
+    font-size: 18px;
+    text-align: center;
+    color: #3aafd3;
+  }
+}
+//首页的销售进度的样式
+.dashboard .saleProgress{
+  .radarStyle#main{
+    margin: 0 auto;
+    width: 98%;
+    height: 80%;
+    box-sizing: border-box;
+  }
+  .shopsToggle{
+    float: right;
+  }
+  .ratio{
+    display: none;
+    // width: auto;
+    // margin-top: 100px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    // background: rgba(0,0,0,0.2);
+  }
+  .ratio span{
+    display: block;
+    margin-bottom: 10px;
+    padding: 0px 10px;
+    font-size: 14px;
+    text-align: center;
+    color: #3aafd3;
+  }
+}
+//更改正在加载中的样式背景
+.el-loading-mask{
+  background: rgba(0,0,0,0) !important;
+}
+//提示消息的样式
+.el-notification.right{
+z-index: 99;
+}
+//暂无数据的样式
+.v-charts-data-empty{
+  background: rgba(0,0,0,0);
+}
+//v-chart中暂无数据的样式
+.data-empty {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -50px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  color: #888;
+  font-size: 14px;
+}

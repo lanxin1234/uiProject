@@ -1,0 +1,14 @@
+{"level":"info","message":"-Initializing view Api Service Application-","timestamp":"2018-06-25T01:51:04.724Z"}
+{"level":"info","message":"registing api viewInterfaceAHandler with url /api/v1/dashboard/viewInterfaceA","timestamp":"2018-06-25T01:51:04.739Z"}
+{"level":"info","message":"registing api viewInterfaceCHandler with url /api/v1/dashboard/viewInterfaceC","timestamp":"2018-06-25T01:51:04.740Z"}
+{"level":"info","message":"registing api viewInterfaceDHandler with url /api/v1/dashboard/viewInterfaceD","timestamp":"2018-06-25T01:51:04.740Z"}
+{"level":"info","message":"registing api viewInterfaceEHandler with url /api/v1/dashboard/viewInterfaceE","timestamp":"2018-06-25T01:51:04.740Z"}
+{"level":"info","message":"registing api viewInterfaceFHandler with url /api/v1/dashboard/viewInterfaceF","timestamp":"2018-06-25T01:51:04.740Z"}
+{"level":"info","message":"registing api viewInterfaceGHandler with url /api/v1/dashboard/viewInterfaceG","timestamp":"2018-06-25T01:51:04.741Z"}
+{"level":"info","message":"registing api viewInterfaceHHandler with url /api/v1/dashboard/viewInterfaceH","timestamp":"2018-06-25T01:51:04.741Z"}
+{"level":"info","message":"registing api viewInterfaceISalesHandler with url /api/v1/dashboard/viewInterfaceISales","timestamp":"2018-06-25T01:51:04.741Z"}
+{"level":"info","message":"registing api viewInterfaceIProfitHandler with url /api/v1/dashboard/viewInterfaceIProfit","timestamp":"2018-06-25T01:51:04.741Z"}
+{"level":"info","message":"registing api viewInterfaceJHandler with url /api/v1/dashboard/viewInterfaceJ","timestamp":"2018-06-25T01:51:04.741Z"}
+{"level":"info","message":"registing api getStoreHandler with url /api/v1/dashboard/getStore","timestamp":"2018-06-25T01:51:04.741Z"}
+{"level":"info","message":"Start Restful Http server on port 3000","timestamp":"2018-06-25T01:51:04.742Z"}
+{"level":"info","message":"Worker 1084 started","timestamp":"2018-06-25T01:51:04.743Z"}
