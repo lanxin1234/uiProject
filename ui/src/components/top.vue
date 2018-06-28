@@ -2,17 +2,13 @@
     <div class="outWapper">
       <div class="top">
         <header>
-          <router-link :to="{ name: 'dashboard' }"><h1 class='logo'>公司名称</h1></router-link>
-           <!-- <div class="menu">
-             <i class="el-icon-menu"></i>
-           </div> -->
+          <router-link :to="{ name: 'dashboard' }"><h1 class='logo'>世纪易联</h1></router-link>
            <carousel></carousel>
            <div class="menu">
-             <!-- <i class="el-icon-menu"></i> -->
              <el-menu
              class="el-menu-demo"
              mode="horizontal"
-             :router=false
+             :router='false'
              @select="handleSelect"
              background-color="#363636"
              text-color='#3aafd3'
@@ -69,14 +65,10 @@ export default {
   name: "top",
   components: { carousel},
   data: () => ({
-    // msg: '大事件: 上海店5月20号隆重开业！',
     activeIndex: '1',
     activeIndex2: '1'
   }),
   methods:{
-    openMenu() {
-
-    },
     handleSelect(key, keyPath) {
         // console.log(key, keyPath);
     }
@@ -89,19 +81,7 @@ export default {
    z-index: 9;
    color: #fff;
  }
- // .info{
- //   font-size: 14px;
- //   color: #fff;
- //   position: absolute;
- //   left:50%;
- //   top:50%;
- //   transform: translate(-50%,-50%);
- // }
- // .top header{
- //   overflow: hidden;
- // }
  .top header .menu{
-   // font-size: 20px;
    height: 40px;
    position: absolute;
    right: 0px;

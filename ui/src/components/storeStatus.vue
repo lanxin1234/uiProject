@@ -75,6 +75,9 @@ export default {
   created() {
     //获取门店的销售数据
     this.getData()
+    // setInterval(()=>{
+    //   this.getData()
+    // },600000)
   },
   mounted() {
     this.$nextTick(function () {
@@ -109,12 +112,12 @@ export default {
           if(!data[0]){
               this.unSaleData = true
           }
-          this.saleData = [];
+          this.saleData = {};
           data.forEach((item,index)=>{
               this.saleData[index] = {shop: item[0], count: Math.floor(item[1]/100)/100};
           })
+          this.tablesData = this.saleData
       })
-      console.log('门店动态saleData',this.saleData)
     },
     toggle (index) {
       this.active = index;
@@ -148,108 +151,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-   .storeStatus fieldset legend{
-     // font-size: 1.28rem;
-   }
-   .storeStatus .commontBoxL .topTab{
-     // margin-top: 10px;
-     width: 326px;
-     text-align: right;
-     float: right;
-   }
-   .storeStatus .commontBoxL  p.toggle{
-     font-size: 1rem;
-     display: inline-block;
-     padding: 4px;
-     margin-right: 5%;
-     margin-bottom: 20px;
-     background: #a3a3a3;
-     border-radius: 4px;
-     cursor: pointer;
-     z-index: 9999;
-   }
-   .storeStatus .commontBoxL  p.toggle.active{
-     background: #22baf1;
-   }
-   .storeStatus .commontBoxL .list,.title{
-     width: 100%;
-     line-height: 100%;
-     overflow:hidden;
-     // border: 1px solid #ddd;
-     box-sizing: border-box;
-   }
-   .storeStatus .commontBoxL .title{
-     display: flex;
-     font-size: 13px;
-     width: 100%;
-     float: left;
-     border: 1px solid #f2f2f2;
-     // border-bottom: none;
-   }
-   .storeStatus .commontBoxL .title span{
-     // display: inline-block;
-     padding: 5px;
-     box-sizing:border-box;
-   }
-   .storeStatus .commontBoxL .list span, .title span{
-      // width: 35%;
-      // float: left;
-      text-align: center;
-      //文字溢出，溢出部分加点
-      text-overflow:ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
 
-   }
-   .storeStatus .commontBoxL .list{
-     // background: green;
-      // display: flex;
-   }
-   .storeStatus .commontBoxL .shopActive .shop{
-     // width:30%;
-   }
-   .storeStatus .commontBoxL .list span.shopAdress, .title span.shopAdress{
-     flex: 1;
-   }
-   .storeStatus .commontBoxL .list span.shop, .title span.shop{
-     flex: 1;
-   }
-   .storeStatus .commontBoxL .scrollText .list{
-     height: 260px;
-   }
-   .storeStatus .commontBoxL .list li{
-     display: flex;
-     height: 26px;
-     line-height: 26px;
-     min-height: 26px;
-     background: #012161;
-     text-align: center;
-     font-size: 12px;
-     border: 1px solid #f2f2f2;
-     border-top: none;
-     border-bottom: none;
-     box-sizing: border-box;
-   }
-   .storeStatus .commontBoxL .list li span{
-     // flex:
-   }
-   .storeStatus .commontBoxL .list li:last-child{
-     border-bottom: 1px solid #f2f2f2;
-   }
-   .storeStatus .commontBoxL .list li:nth-child(2n){
-     background: #2c76b5;
-   }
-   .storeStatus .el-carousel,.produceDy .el-carousel{
-     width: 100%;
-     height: 100%;
-   }
-  .storeStatus .commontBoxL .el-table{
-    text-align: center;
-  }
-  .storeStatus .commontBoxL .el-table .has-gutter th>div.cell{
-    text-align: center;
-  }
-  .el-carousel__item{
-    margin-right: 1px;
-  }
 </style>

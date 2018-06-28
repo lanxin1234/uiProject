@@ -904,53 +904,53 @@ switchStore: function() {
 </script>
 <style lang="scss" >
 //更改销售进度的选择框的样式
-.el-select .el-input.is-focus .el-input__inner {
- border-color: #000;
- border: none;
-}
-.el-input__inner{
- background-color: #000;
- color: #ccc;
- border: none;
-}
-.el-select-dropdown__list {
- background-color: #000;
- color: #ccc;
-}
-.el-select-dropdown__item:hover {
- background-color: #2D2D2D;
- color: #ccc;
-}
-.el-select-dropdown__item.selected {
- background-color: #000;
- color: #3db3dd;
-}
-.el-select .el-input__inner:focus {
- border-color: #000;
-}
-.el-input__inner {
- border-color: #000;
- border: none;
-}
-.el-input__inner:focus {
- border-color: #000;
-}
-.el-input__inner:hover {
- border-color: #000;
-}
-.el-select-dropdown {
- border-color: #000;
-}
-.el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
- background-color: #2D2D2D;
-}
-.el-popper .popper__arrow {
- border-width: 0px;
-}
-.el-popper[x-placement^=bottom] .popper__arrow::after {
- border-bottom-color: #000;
-}
-.el-select-dropdown__item {
-  width: 180px;
-}
+// .el-select .el-input.is-focus .el-input__inner {
+//  border-color: #000;
+//  border: none;
+// }
+// .el-input__inner{
+//  background-color: #000;
+//  color: #ccc;
+//  border: none;
+// }
+// .el-select-dropdown__list {
+//  background-color: #000;
+//  color: #ccc;
+// }
+// .el-select-dropdown__item:hover {
+//  background-color: #2D2D2D;
+//  color: #ccc;
+// }
+// .el-select-dropdown__item.selected {
+//  background-color: #000;
+//  color: #3db3dd;
+// }
+// .el-select .el-input__inner:focus {
+//  border-color: #000;
+// }
+// .el-input__inner {
+//  border-color: #000;
+//  border: none;
+// }
+// .el-input__inner:focus {
+//  border-color: #000;
+// }
+// .el-input__inner:hover {
+//  border-color: #000;
+// }
+// .el-select-dropdown {
+//  border-color: #000;
+// }
+// .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
+//  background-color: #2D2D2D;
+// }
+// .el-popper .popper__arrow {
+//  border-width: 0px;
+// }
+// .el-popper[x-placement^=bottom] .popper__arrow::after {
+//  border-bottom-color: #000;
+// }
+// .el-select-dropdown__item {
+//   width: 180px;
+// }
 </style>

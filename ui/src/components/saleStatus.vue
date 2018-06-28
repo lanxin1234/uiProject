@@ -136,74 +136,13 @@ export default {
     tabs:['新品','畅销品','滞销品']
   }),
   created() {
-    this.newProduces = [
-      // {num: '001',name: '红米Note 5A',count: '6000',profit: 500000},
-      // {num: '002',name: '红米Note 5A',count: '6000',profit: 500000},
-      // {num: '003',name: '红米Note 5A',count: '6000',profit: 500000},
-      // {num: '004',name: '红米Note 5A',count: '6000',profit: 500000},
-      // {num: '005',name: '红米Note 5A',count: '6000',profit: 500000},
-      // {num: '006',name: '红米Note 5A',count: '6000',profit: 500000},
-      // {num: '007',name: '红米Note 5A',count: '6000',profit: 500000},
-      // {num: '008',name: '红米Note 5A',count: '6000',profit: 500000},
-      // {num: '009',name: '红米Note 5A',count: '6000',profit: 500000},
-      // {num: '0010',name: '红米Note 5A',count: '6000',profit: 500000},
-      // {num: '0011',name: '红米Note 5A',count: '6000',profit: 500000},
-    ]
-    this.sellBetters = [
-      // {rank:1, num: '001', name: '小米',count: 9000},
-      // {rank:2, num: '001', name: '小米',count: 9000},
-      // {rank:3, num: '001', name: '小米',count: 9000},
-      // {rank:4, num: '001', name: '小米',count: 9000},
-      // {rank:5, num: '001', name: '小米',count: 9000},
-      // {rank:6, num: '001', name: '小米',count: 9000},
-      // {rank:7, num: '001', name: '小米',count: 9000},
-      // {rank:8, num: '001', name: '小米',count: 9000}
-    ]
-    this.unSoldGoods = [
-      // {rank:1, num: '002', name: '小米6',count: 9000},
-      // {rank:2, num: '002', name: '小米6',count: 9000},
-      // {rank:3, num: '002', name: '小米6',count: 9000},
-      // {rank:4, num: '002', name: '小米6',count: 9000},
-      // {rank:5, num: '002', name: '小米6',count: 9000},
-      // {rank:6, num: '002', name: '小米6',count: 9000},
-      // {rank:7, num: '002', name: '小米6',count: 9000},
-      // {rank:8, num: '002', name: '小米6',count: 9000}
-    ]
-    this.$ajax.get('dashboard/viewInterfaceH').then((res)=>{
-      var data = res.data.data;
-      //新品的数据
-      data.newProductsDynamic.forEach((item,index)=>{
-        this.newProduces[index] = {num: item[0],name: item[1],count:Math.floor(item[2]*100)/100,profit: Math.floor(item[3]/100)/100};
-      })
-      if(!data.newProductsDynamic[0]){
-          this.news = true;
-          // this.tabs = ['畅销品','滞销品'];
-      }else{
-        this.news = false;
-        // this.tabs = ['新品','畅销品','滞销品'];
-      }
-      //畅销品的数据
-      data.sellingProductsDynamic.forEach((item,index)=>{
-        this.sellBetters[index] = {rank:item[3], num:item[0], name:item[1],count: Math.floor(item[2] / 100)/100};
-      })
-      if(!data.sellingProductsDynamic[0]){
-          this.sell = true;
-          // this.tabs = ['畅销品','滞销品'];
-      }else{
-        this.sell = false;
-        // this.tabs = ['新品','畅销品','滞销品'];
-      }
-      //滞销品的数据
-      data.unsalableProductsDynamic.forEach((item,index)=>{
-        this.unSoldGoods[index] = {rank:item[3], num:item[0], name:item[1],count: Math.floor(item[2] * 100)/100};
-      })
-      if(!data.unsalableProductsDynamic[0]){
-          this.unSold = true;
-      }else{
-        this.unSold = false;
-      }
-      console.log('商品销售动态的数据',data)
-    })
+    this.newProduces = []
+    this.sellBetters = []
+    this.unSoldGoods = []
+     this.getData()
+     // setInterval(()=>{
+     //   this.getData()
+     // },600000)
   },
   mounted() {
     this.$nextTick(function () {
@@ -220,6 +159,43 @@ export default {
      })
   },
   methods: {
+    getData () {
+      this.$ajax.get('dashboard/viewInterfaceH').then((res)=>{
+        var data = res.data.data;
+        //新品的数据
+        data.newProductsDynamic.forEach((item,index)=>{
+          this.newProduces[index] = {num: item[0],name: item[1],count:Math.floor(item[2]*100)/100,profit: Math.floor(item[3]/100)/100};
+        })
+        if(!data.newProductsDynamic[0]){
+            this.news = true;
+            // this.tabs = ['畅销品','滞销品'];
+        }else{
+          this.news = false;
+          // this.tabs = ['新品','畅销品','滞销品'];
+        }
+        //畅销品的数据
+        data.sellingProductsDynamic.forEach((item,index)=>{
+          this.sellBetters[index] = {rank:item[3], num:item[0], name:item[1],count: Math.floor(item[2] / 100)/100};
+        })
+        if(!data.sellingProductsDynamic[0]){
+            this.sell = true;
+            // this.tabs = ['畅销品','滞销品'];
+        }else{
+          this.sell = false;
+          // this.tabs = ['新品','畅销品','滞销品'];
+        }
+        //滞销品的数据
+        data.unsalableProductsDynamic.forEach((item,index)=>{
+          this.unSoldGoods[index] = {rank:item[3], num:item[0], name:item[1],count: Math.floor(item[2] * 100)/100};
+        })
+        if(!data.unsalableProductsDynamic[0]){
+            this.unSold = true;
+        }else{
+          this.unSold = false;
+        }
+        console.log('商品销售动态的数据',data)
+      })
+    },
     toggle (index) {
       this.$refs.carousel.setActiveItem(index)
        this.active = index;
@@ -292,33 +268,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.saleStatus .commontBoxL .title{
-  display: flex;
-  // font-size: 13px;
-  width: 100%;
-  float: left;
-  // border: 1px solid #f2f2f2;
-  border: 1px dotted #3aafd3;
-  box-sizing: border-box;
-}
-.saleStatus .commontBoxL .list span.shopAdress, .title span.shopAdress{
-  text-align: center;
-  flex: 1.5;
-}
-.saleStatus .commontBoxL .list span.shop, .title span.shop{
-  flex: 1;
-}
-.data-empty {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0);
-  color: #888;
-  font-size: 14px;
-}
+
 </style>

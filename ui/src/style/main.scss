@@ -16,7 +16,6 @@ body{
   position: absolute;
   width: 100%;
   height: 100%;
-  // z-index:1000;
 }
 //公司首页的样式
 .dashboard{
@@ -43,11 +42,15 @@ body{
     overflow: hidden;
   }
   .logo{
-    width: 5rem;
-    text-indent: -9999em;
-    background: url(../assets/logo.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    // width: 5rem;
+    // text-indent: -9999em;
+    // background: url(../assets/logo.png);
+    // background-size: contain;
+    // background-repeat: no-repeat;
   }
   //更改右侧菜单栏的高度
   .el-menu--horizontal>.el-submenu .el-submenu__title{
@@ -83,21 +86,6 @@ body{
     margin-right: 18px;
     margin-top: 20px;
   }
-  //每一个组件内的每一个图表的公共样式，外部边框的样式
-  // .commontBoxL{
-  //   // clear: both;
-  //   border: 2px dotted #3aafd3;
-  //   border-radius: 3px;
-  //   box-shadow: 0px 0px 10px #3aafd3,0px 0px 10px #3aafd3 inset;
-  //   height:380px;
-  //   .textL{
-  //     padding: 0px 10px;
-  //     text-align: center;
-  //     color: #3aafd3;
-  //     text-shadow: #3db3dd 1px 0px 10px,#3db3dd 1px 0px 20px;
-  //     background: #000;
-  //   }
-  // }
   .productTypeStatus, .income{
     flex: 0.4;
     width: 472px;
@@ -136,6 +124,7 @@ body{
   border: 2px dotted #3aafd3;
   border-radius: 3px;
   box-shadow: 0px 0px 10px #3aafd3,0px 0px 10px #3aafd3 inset;
+  cursor: pointer;
   .textL{
     font-size: 1.28rem;
     padding: 0px 10px;
@@ -147,6 +136,97 @@ body{
 }
 
 .storeStatus{
+  .commontBoxL .topTab{
+    // margin-top: 10px;
+    width: 326px;
+    text-align: right;
+    float: right;
+  }
+  .commontBoxL  p.toggle{
+    font-size: 1rem;
+    display: inline-block;
+    padding: 4px;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    background: #a3a3a3;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+  .commontBoxL  p.toggle.active{
+    background: #22baf1;
+  }
+  .commontBoxL .list,.title{
+    width: 100%;
+    line-height: 100%;
+    overflow:hidden;
+    // border: 1px solid #ddd;
+    box-sizing: border-box;
+  }
+  .commontBoxL .title{
+    display: flex;
+    font-size: 13px;
+    width: 100%;
+    float: left;
+    border: 1px solid #f2f2f2;
+    // border-bottom: none;
+  }
+  .commontBoxL .title span{
+    // display: inline-block;
+    padding: 5px;
+    box-sizing:border-box;
+  }
+  .commontBoxL .list span, .title span{
+     // width: 35%;
+     // float: left;
+     text-align: center;
+     //文字溢出，溢出部分加点
+     text-overflow:ellipsis;
+     white-space: nowrap;
+     overflow: hidden;
+
+  }
+  .commontBoxL .list span.shopAdress, .title span.shopAdress{
+    flex: 1;
+  }
+  .commontBoxL .list span.shop, .title span.shop{
+    flex: 1;
+  }
+  .commontBoxL .scrollText .list{
+    height: 260px;
+  }
+  .commontBoxL .list li{
+    display: flex;
+    height: 26px;
+    line-height: 26px;
+    min-height: 26px;
+    background: #012161;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid #f2f2f2;
+    border-top: none;
+    border-bottom: none;
+    box-sizing: border-box;
+  }
+  .commontBoxL .list li:last-child{
+    border-bottom: 1px solid #f2f2f2;
+  }
+  .commontBoxL .list li:nth-child(2n){
+    background: #2c76b5;
+  }
+  .el-carousel,.produceDy .el-carousel{
+    width: 100%;
+    height: 100%;
+  }
+  .commontBoxL .el-table{
+    text-align: center;
+  }
+  .commontBoxL .el-table .has-gutter th>div.cell{
+    text-align: center;
+  }
+  .el-carousel__item{
+    margin-right: 1px;
+  }
   //修改使用组件的一些样式
   //门店动态的弹出表格的样式
   .commontBoxL .el-table .warning-row {
@@ -169,14 +249,26 @@ body{
     height: 600px;
   }
 }
-//修改收入成本与毛利的弹出层的背景色
-.income .incomeDia .el-dialog{
-   // background: #434343;
+//收入成本与毛利的样式
+.income {
+  fieldset legend.textL{
+    text-align: left;
+    width: 126px;
+    margin-left: 40px;
+  }
+  .ve-histogram{
+   height: 500px;
+  }
+  .ve-histogram>div div{
+    height: 500px;
+    background: green;
+  }
+  #incomeChartBox{
+    width: 100%;
+    height: 92%;
+    margin: 0 auto;
+  }
 }
-.el-dialog__wrapper{
-  // width: 99%;
-}
-
 //单个屏中 orderInfo 的样式
 .order-info{
   padding-top: 120px;
@@ -446,10 +538,10 @@ body{
       padding-bottom: 10px;
     }
     box-sizing: border-box;
-    width: 400px;
-    flex-grow: 0.2;
-    margin-left: -10px;
-    margin-right: 10px;
+    width: 353px;
+    flex-grow: 0.3;
+    // margin-left: -10px;
+    margin-right: 15px;
     height: 400px;
     overflow: hidden;
     #dailyOrdersMap{
@@ -628,6 +720,35 @@ body{
   }
  .commontBoxL  .el-dialog__header{
     text-align: center;
+  }
+  .commontBoxL .title{
+    display: flex;
+    // font-size: 13px;
+    width: 100%;
+    float: left;
+    // border: 1px solid #f2f2f2;
+    border: 1px dotted #3aafd3;
+    box-sizing: border-box;
+  }
+  .commontBoxL .list span.shopAdress, .title span.shopAdress{
+    text-align: center;
+    flex: 1.5;
+  }
+  .commontBoxL .list span.shop, .title span.shop{
+    flex: 1;
+  }
+  .data-empty {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    color: #888;
+    font-size: 14px;
   }
 }
 //首页的商品销售动态的样式

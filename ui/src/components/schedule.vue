@@ -1,10 +1,7 @@
 <template>
   <div class="schedule"  @dblclick='openSchedule'>
-    <!-- <div class="clear">
-    </div> -->
     <div class="wapper">
       <saleProgress></saleProgress>
-      <!-- <saleSchedule></saleSchedule> -->
     </div>
   </div>
 </template>
@@ -18,7 +15,6 @@ export default {
   }),
   components: {
     'saleProgress': saleProgress,
-    // 'saleSchedule': saleSchedule
   },
   methods: {
     openSchedule() {

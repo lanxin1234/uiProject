@@ -3,7 +3,6 @@
       <div class="">
         <topTen class='commont'></topTen>
         <schedule class='commont'></schedule>
-        <!-- <schedule class='commont'></schedule> -->
         <productTypeStatus class='commont'></productTypeStatus>
       </div>
       <div class="bottom">

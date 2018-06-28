@@ -230,21 +230,21 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .income fieldset legend.textL{
-    text-align: left;
-    width: 126px;
-    margin-left: 40px;
-  }
-  .income .ve-histogram{
-   height: 500px;
-  }
-  .income .ve-histogram>div div{
-    height: 500px;
-    background: green;
-  }
-  #incomeChartBox{
-    width: 100%;
-    height: 92%;
-    margin: 0 auto;
-  }
+  // .income fieldset legend.textL{
+  //   text-align: left;
+  //   width: 126px;
+  //   margin-left: 40px;
+  // }
+  // .income .ve-histogram{
+  //  height: 500px;
+  // }
+  // .income .ve-histogram>div div{
+  //   height: 500px;
+  //   background: green;
+  // }
+  // #incomeChartBox{
+  //   width: 100%;
+  //   height: 92%;
+  //   margin: 0 auto;
+  // }
 </style>

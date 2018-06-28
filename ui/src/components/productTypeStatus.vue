@@ -19,50 +19,6 @@
          <div class="pieBox">
             <div id='secondType'>
             </div>
-           <!-- <div class="layoutPie">
-             <ve-pie
-             :key='allData.index'
-             :data="allData.pieChartData"
-             :legend-visible='false'
-             :settings="allData.pieChartSettings"
-             :title='allData.titleOption'
-             :colors='chartColors'
-              height='160px'
-              width='100px'>
-             </ve-pie>
-             <ve-pie
-             :key='allData.index'
-             :data="allData.pieChartData"
-             :legend-visible='false'
-             :settings="allData.pieChartSettings"
-             :title='allData.titleOption'
-             :colors='chartColors'
-              height='160px'
-              width='100px'>
-             </ve-pie>
-           </div>
-           <div class="layoutPie">
-             <ve-pie
-             :key='allData.index'
-             :data="allData.pieChartData"
-             :legend-visible='false'
-             :settings="allData.pieChartSettings"
-             :title='allData.titleOption'
-             :colors='chartColors'
-              height='160px'
-              width='100px'>
-             </ve-pie>
-             <ve-pie
-             :key='allData.index'
-             :data="allData.pieChartData"
-             :legend-visible='false'
-             :settings="allData.pieChartSettings"
-             :title='allData.titleOption'
-             :colors='chartColors'
-              height='160px'
-              width='100px'>
-             </ve-pie>
-           </div> -->
          </div>
        </div>
     </fieldset>
@@ -92,7 +48,7 @@ export default {
     chartColors: ['#22baf1','#ff8400','#7d90a6','#60a0a8','#96d668','orange','#91c8ae','#c23631'],
     chartGrid: {
       // show: false,
-      // left:'center',
+      left:'center',
       // top: '50%',
       // right: '50%'
     },
@@ -179,6 +135,10 @@ export default {
                  }
               },
                 tooltip: {trigger: 'axis'},
+                grid:{
+                  containLabel: true,
+                  left: 10
+                },
                 legend: {
                     data:['销量']
                 },

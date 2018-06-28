@@ -1,6 +1,5 @@
 <template>
   <div class="dashboard">
-     <!-- <top></top> -->
     <div class="content">
       <maintop></maintop>
       <dataCenter></dataCenter>
